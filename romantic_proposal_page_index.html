@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Propose Day ❤️</title>
+
+<style>
+body {
+    margin:0;
+    font-family:'Segoe UI',sans-serif;
+    height:100vh;
+    overflow:hidden;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#ff758c,#ff7eb3);
+}
+
+.card{
+    background:rgba(255,255,255,0.18);
+    backdrop-filter:blur(12px);
+    padding:35px;
+    border-radius:25px;
+    text-align:center;
+    color:white;
+    box-shadow:0 10px 30px rgba(0,0,0,0.25);
+    z-index:2;
+}
+
+h1{font-size:30px;margin-bottom:5px;}
+h2{margin:8px 0;}
+p{font-size:18px;margin-bottom:25px;}
+
+.btn{
+    padding:14px 28px;
+    border-radius:30px;
+    text-decoration:none;
+    color:white;
+    margin:8px;
+    display:inline-block;
+    transition:.3s;
+}
+
+.yes{
+    background:#ff4d6d;
+    font-weight:bold;
+}
+
+.no{background:#6c757d;}
+
+.btn:hover{
+    transform:scale(1.1);
+}
+
+/* Floating hearts */
+.heart{
+    position:absolute;
+    bottom:-20px;
+    font-size:22px;
+    animation:float 6s linear infinite;
+    opacity:.7;
+}
+
+@keyframes float{
+    0%{transform:translateY(0) scale(.8);}    
+    100%{transform:translateY(-110vh) scale(1.4);} 
+}
+
+</style>
+</head>
+<body>
+
+<!-- Music autoplay -->
+<audio autoplay loop>
+<source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_c8f6b6a9f4.mp3?filename=romantic-background-112192.mp3" type="audio/mpeg">
+</audio>
+
+<div class="card">
+<h1>💖 Happy Propose Day 💖</h1>
+<h2>Divyanshi 🌸</h2>
+<p>You make my world beautiful.<br>Will you be my Valentine? 🥰</p>
+
+<a class="btn yes" onclick="celebrate()" href="https://wa.me/?text=YES%20❤️%20I%20will%20be%20your%20Valentine%20🥰">YES ❤️</a>
+<a class="btn no" href="https://wa.me/?text=NO%20💔">NO 💔</a>
+</div>
+
+<script>
+// floating hearts generator
+setInterval(()=>{
+    let heart=document.createElement('div');
+    heart.className='heart';
+    heart.innerHTML='❤️';
+    heart.style.left=Math.random()*100+'vw';
+    heart.style.animationDuration=(Math.random()*3+3)+'s';
+    document.body.appendChild(heart);
+    setTimeout(()=>heart.remove(),6000);
+},400);
+
+// yes button celebration
+function celebrate(){
+    alert('Yay ❤️ Best decision ever 😄');
+}
+</script>
+
+</body>
+</html>
